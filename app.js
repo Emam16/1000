@@ -15,7 +15,9 @@ app.use(express.static("Public"));
 //res.sendFile(htmlPath)
 //});
 
-app.listen (1000, ()=>console.log ("Servidor en puerto 1000"))
+//app.listen (1000, ()=>console.log ("Servidor en puerto 1000"))
+
+app.listen (process.env.PORT || 1000, function () {console.log ("Servidor en puerto 1000")});
 
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
